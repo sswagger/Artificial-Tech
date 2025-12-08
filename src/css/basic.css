@@ -1,26 +1,64 @@
-body {
-	background-color: rgb(75, 100, 155);
+/* =================
+ * Header and Footer
+ * =================
+ */
+a {
+	display: inline-block;
+	width: 100%;
+	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: underline;
+	color: white;
+}
+
+/* ======
+ * Header
+ * ======
+ */
 header {
 	width: 100%;
 	background-color: white;
 }
 
 h1 {
+	float: left;
 	text-align: center;
-	color: rgb(150, 20, 20);
 	font-size: 3rem;
-	-webkit-text-stroke: 1px rgb(50, 0, 0);
 }
 
 h1 img {
-	width: 200px;
+	margin: 10px;
+	width: 300px;
+	color: rgb(150, 20, 20);
 }
 
-nav li {
+ul#account {
+	float: right;
+	margin: 20px;
+}
+
+#account li {
+	float: left;
+	text-align: center;
+	list-style-type: none;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: rgb(150, 20, 20);
+}
+
+nav {
+	clear: both;
+}
+
+header nav li {
 	float: left;
 	width: 25%;
+	text-align: center;
+	list-style-type: none;
+	box-sizing: border-box;
+	padding: 10px;
 	background-color: rgb(150, 20, 20);
 }
 
@@ -30,6 +68,24 @@ nav::after {
 	clear: both;
 }
 
-article {
-	border: 1px solid rgb(50, 0, 0);
+/* ======
+ * Footer
+ * ======
+ */
+
+footer {
+	background-color: white;
+}
+footer div {
+	float: left;
+	padding: 10px;
+	box-sizing: border-box;
+	width: 25%;
+}
+footer li {
+	text-align: center;
+	list-style-type: none;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: rgb(150, 20, 20);
 }
