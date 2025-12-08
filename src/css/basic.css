@@ -89,3 +89,28 @@ footer li {
 	padding: 10px;
 	background-color: rgb(150, 20, 20);
 }
+
+/* ======================
+ * Other Content Elements
+ * ======================
+ */
+
+.alone-link {
+	font-family: "Nunito", Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	line-height: 2;
+	width: auto;
+	text-decoration: underline;
+}
+
+div {
+	background-color: white;
+	width: 75%;
+	margin: 20px auto;
+	padding: 0 20px;
+	border-radius: 10px;
+}
+
+div img {
+	width: 100%;
+}

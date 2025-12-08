@@ -1,19 +1,7 @@
-div {
-	background-color: white;
-	width: 75%;
-	margin: 20px auto;
-	padding: 0 20px;
-	border-radius: 10px;
-}
-
 div.main-content::after {
 	content: "";
 	display: table;
 	clear: both;
-}
-
-div img {
-	width: 100%;
 }
 
 .blue-div {
@@ -28,14 +16,6 @@ div img {
 .blue-div {
 	margin-left: 5%;
 	margin-right: 5%;
-}
-
-.alone-link {
-	font-family: "Nunito", Arial, Helvetica, sans-serif;
-	font-size: 1rem;
-	line-height: 2;
-	width: auto;
-	text-decoration: underline;
 }
 
 sup {
