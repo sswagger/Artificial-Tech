@@ -1,0 +1,35 @@
+body {
+	background-color: rgb(75, 100, 155);
+}
+
+header {
+	width: 100%;
+	background-color: white;
+}
+
+h1 {
+	text-align: center;
+	color: rgb(150, 20, 20);
+	font-size: 3rem;
+	-webkit-text-stroke: 1px rgb(50, 0, 0);
+}
+
+h1 img {
+	width: 200px;
+}
+
+nav li {
+	float: left;
+	width: 25%;
+	background-color: rgb(150, 20, 20);
+}
+
+nav::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+article {
+	border: 1px solid rgb(50, 0, 0);
+}
