@@ -75,6 +75,7 @@ nav::after {
 
 footer {
 	background-color: white;
+	border-top: rgb(150, 20, 20) 20px solid;
 }
 footer div {
 	float: left;
@@ -113,4 +114,8 @@ div {
 
 div img {
 	width: 100%;
+}
+
+.white-link:hover {
+	color: black;
 }

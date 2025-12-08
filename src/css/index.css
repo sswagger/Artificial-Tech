@@ -21,7 +21,3 @@ div.main-content::after {
 sup {
 	font-size: 0.4rem;
 }
-
-#ms-azure:hover {
-	color: black;
-}
