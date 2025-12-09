@@ -1,9 +1,3 @@
-div.main-content::after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
 .blue-div {
 	background-color: rgb(75, 100, 155);
 	float: left;
