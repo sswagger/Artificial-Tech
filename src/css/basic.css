@@ -121,3 +121,8 @@ div img {
 .white-link:hover {
 	color: black;
 }
+
+h3 {
+	padding: 10px;
+	box-sizing: border-box;
+}
