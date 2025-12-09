@@ -1,0 +1,12 @@
+.wide-div {
+	width: 80%;
+	background-color: rgb(75, 100, 155);
+	padding: 20px;
+}
+
+.learn-more {
+	background-color: rgb(150, 20, 20);
+	padding: 20px;
+	border-radius: 10px;
+	width: auto;
+}
