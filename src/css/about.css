@@ -1,0 +1,29 @@
+div.main-content::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.blue-div {
+	background-color: rgb(75, 100, 155);
+	float: left;
+	width: 40%;
+	box-sizing: border-box;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.blue-div {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#num-accounts {
+	font-weight: bold;
+	font-size: 5rem;
+}
+
+#num-accounts-parent {
+	text-align: center;
+	margin: auto;
+}
