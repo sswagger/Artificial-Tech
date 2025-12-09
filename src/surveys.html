@@ -1,10 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Title</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/basic.css" />
+		<link rel="stylesheet" href="css/surveys.css" />
+		<script src="js/surveys.js" defer></script>
+		<title>Surveys | Artificial Technologies</title>
+	</head>
 
-</body>
+	<body>
+		<header>
+			<h1><a href="index.html"><img src="img/red-head-artificial-tech.png" alt="Artificial Technologies" /></a></h1>
+			<ul id="account">
+				<li><a href="404-error.html">Log in</a></li>
+				<li><a href="404-error.html">Sign up</a></li>
+			</ul>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about-us.html">About Us</a></li>
+					<li><a href="products.html">Our Products</a></li>
+					<li><a href="surveys.html">Current Surveys</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="main-content">
+			<img src="img/head-artificial-tech.png" alt="" />
+
+			<h2>Quick Question Surveys</h2>
+			<p>
+				These surveys are entirely voluntary: you are not required to answer them.
+				However, we greatly appreciate your feedback; it helps us make the right decisions in our future plans.
+			</p>
+
+			<img src="img/footer.png" alt="" />
+		</div>
+
+		<div class="main-content">
+			<img src="img/head-artificial-tech.png" alt="" />
+
+			<form id="survey-form">
+				<div>
+					<h3>Are you or your company looking for a better way to manage server loads?</h3>
+					<ul>
+						<li>
+							<input type="radio" name="q1" id="q1Yes"/>
+							<label for="q1Yes">Yes</label>
+						</li>
+						<li>
+							<input type="radio" name="q1" id="q1No"/>
+							<label for="q1No">No</label>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h3>Is there are company that you know of that offers server load management and freemium servers?</h3>
+					<ul>
+						<li>
+							<input type="radio" name="q2" id="q2Yes"/>
+							<label for="q2Yes">Yes</label>
+						</li>
+						<li>
+							<input type="radio" name="q2" id="q2No"/>
+							<label for="q2No">No</label>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h3>How much would you (as a hobbyist or as a company) willing to spend monthly on a product like Wide Computing?</h3>
+					<ul>
+						<li>
+							<input type="radio" name="q3" id="q350"/>
+							<label for="q350">$5,0 - $1,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3100"/>
+							<label for="q3100">$1,00 - $2,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3200"/>
+							<label for="q3200">$2,00 - $3,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3300"/>
+							<label for="q3300">$3,00 - $4,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3400"/>
+							<label for="q3400">$4,00 - $5,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3500"/>
+							<label for="q3500">$5,00 - $6,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3600"/>
+							<label for="q3600">$6,00 - $7,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3700"/>
+							<label for="q3700">$7,00 - $8,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3800"/>
+							<label for="q3800">$8,00 - $9,00</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q3900"/>
+							<label for="q3900">$9,00 - $1,000</label>
+						</li>
+						<li>
+							<input type="radio" name="q3" id="q31000"/>
+							<label for="q31000">$10,000 +</label>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h3>How likely are you to show Artificial Tech to a friend?</h3>
+					<ul>
+						<li>
+							<input type="radio" name="q4" id="q11"/>
+							<label for="q11">A Lot</label>
+						</li>
+						<li>
+							<input type="radio" name="q4" id="q12"/>
+							<label for="q12">A Little</label>
+						</li>
+						<li>
+							<input type="radio" name="q4" id="q13"/>
+							<label for="q13">Maybe</label>
+						</li>
+						<li>
+							<input type="radio" name="q4" id="q14"/>
+							<label for="q14">Not Really</label>
+						</li>
+						<li>
+							<input type="radio" name="q4" id="q15"/>
+							<label for="q15">Definitely Not</label>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h3>Do you like this website?</h3>
+					<ul>
+						<li>
+							<input type="radio" name="q5" id="q4Yes"/>
+							<label for="q4Yes">Yes</label>
+						</li>
+						<li>
+							<input type="radio" name="q5" id="q4No"/>
+							<label for="q4No">No</label>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<button type="submit" id="submit">Submit</button>
+				</div>
+			</form>
+
+			<img src="img/footer.png" alt="" />
+		</div>
+
+		<footer>
+		<nav>
+			<div>
+				<h3>Our Company</h3>
+				<ul>
+					<li><a href="job-openings.html">Job Openings</a></li>
+					<li><a href="surveys.html">Surveys</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3>Our Products</h3>
+				<ul>
+					<li><a href="products.html">Overview</a></li>
+					<li><a href="open-circuits.html">Open Circuits</a></li>
+					<li><a href="wide-computing.html">Wide Computing</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3>About Us</h3>
+				<ul>
+					<li><a href="about-us.html">Overview</a></li>
+					<li><a href="about-us.html">Employees</a></li>
+					<li><a href="about-us.html">Goals</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3>Account</h3>
+				<ul>
+					<li><a href="404-error.html">Log In</a></li>
+					<li><a href="404-error.html">Sign Up</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3>Contact Us</h3>
+				<ul>
+					<li><a href="mailto:customerservice@artificialtech.com">Email</a></li>
+					<li><a href="tel:+10000000000">Phone</a></li>
+				</ul>
+			</div>
+		</nav>
+	</footer>
+	</body>
 </html>
