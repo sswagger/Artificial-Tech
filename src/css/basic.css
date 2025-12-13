@@ -22,46 +22,14 @@ header {
 	background-color: white;
 }
 
-h1 {
-	float: left;
-	text-align: center;
-	font-size: 3rem;
-}
-
 h1 img {
 	margin: 10px;
 	width: 300px;
 	color: rgb(150, 20, 20);
 }
 
-ul#account {
-	float: right;
-	margin: 20px;
-}
-
-#account li {
-	float: left;
-	text-align: center;
-	list-style-type: none;
-	box-sizing: border-box;
-	margin-right: 10px;
-	border-radius: 10px;
-	padding: 20px;
-	background-color: rgb(150, 20, 20);
-}
-
 nav {
 	clear: both;
-}
-
-header nav li {
-	float: left;
-	width: 25%;
-	text-align: center;
-	list-style-type: none;
-	box-sizing: border-box;
-	padding: 10px;
-	background-color: rgb(150, 20, 20);
 }
 
 nav::after {
@@ -74,23 +42,9 @@ nav::after {
  * Footer
  * ======
  */
-
 footer {
 	background-color: white;
 	border-top: rgb(150, 20, 20) 20px solid;
-}
-footer div {
-	float: left;
-	padding: 10px;
-	box-sizing: border-box;
-	width: 20%;
-}
-footer li {
-	text-align: center;
-	list-style-type: none;
-	box-sizing: border-box;
-	padding: 10px;
-	background-color: rgb(150, 20, 20);
 }
 
 /* ======================
@@ -104,14 +58,6 @@ footer li {
 	line-height: 2;
 	width: auto;
 	text-decoration: underline;
-}
-
-div {
-	background-color: white;
-	width: 75%;
-	margin: 20px auto;
-	padding: 0 10px;
-	border-radius: 10px;
 }
 
 div img {
@@ -137,10 +83,86 @@ h3 {
  * Responsive Design
  * =================
  */
-@media (min-width: 950px) {
 /* desktop: everything wider than 950px */
+@media (min-width: 950px) {
+	/*=== Header ===*/
+	h1 {
+		float: left;
+		text-align: center;
+		font-size: 3rem;
+	}
 
+	header nav li {
+		float: left;
+		width: 25%;
+		text-align: center;
+		list-style-type: none;
+		box-sizing: border-box;
+		padding: 10px;
+		background-color: rgb(150, 20, 20);
+	}
+
+	ul#account {
+		float: right;
+		margin: 20px;
+	}
+
+	#account li {
+		float: left;
+		text-align: center;
+		list-style-type: none;
+		box-sizing: border-box;
+		margin-right: 10px;
+		border-radius: 10px;
+		padding: 20px;
+		background-color: rgb(150, 20, 20);
+	}
+
+	/*=== footer ===*/
+	footer div {
+		float: left;
+		padding: 10px;
+		box-sizing: border-box;
+		width: 20%;
+	}
+
+	footer li {
+		text-align: center;
+		list-style-type: none;
+		box-sizing: border-box;
+		padding: 10px;
+		background-color: rgb(150, 20, 20);
+	}
+
+	/*=== other elements ===*/
+	div {
+		background-color: white;
+		width: 75%;
+		margin: 20px auto;
+		padding: 0 10px;
+		border-radius: 10px;
+	}
 }
-@media (max-width: 950px) {
 /* mobile/tablet: everything smaller than 950px wide*/
+@media (max-width: 950px) {
+	/*=== header ===*/
+	h1 {
+		width: 100%;
+		text-align: center;
+	}
+
+	ul#account {
+		width: 70%;
+		float: right;
+	}
+
+	#account li {
+		float: left;
+		text-align: center;
+		list-style-type: none;
+		box-sizing: border-box;
+		padding: 10px;
+		width: 50%;
+		background-color: rgb(150, 20, 20);
+	}
 }
