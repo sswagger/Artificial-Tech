@@ -110,12 +110,17 @@ div {
 	background-color: white;
 	width: 75%;
 	margin: 20px auto;
-	padding: 0 20px;
+	padding: 0 10px;
 	border-radius: 10px;
 }
 
 div img {
 	width: 100%;
+}
+
+.bottom_img {
+	position: relative;
+	top: 5px;
 }
 
 .white-link:hover {
