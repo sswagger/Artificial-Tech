@@ -1,15 +1,8 @@
 .blue-div {
 	background-color: rgb(75, 100, 155);
-	float: left;
-	width: 40%;
 	box-sizing: border-box;
 	padding: 20px;
 	border-radius: 10px;
-}
-
-.blue-div {
-	margin-left: 5%;
-	margin-right: 5%;
 }
 
 #num-accounts {
@@ -20,4 +13,19 @@
 #num-accounts-parent {
 	text-align: center;
 	margin: auto;
+}
+
+@media (min-width: 950px) {
+	.blue-div {
+		float: left;
+		width: 40%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
+@media (max-width: 950px) {
+	.blue-div {
+		width: 90%;
+		margin: 20px 5%;
+	}
 }

@@ -78,6 +78,10 @@ h3 {
 	box-sizing: border-box;
 }
 
+p {
+	padding: 0 20px;
+}
+
 
 /* =================
  * Responsive Design
@@ -90,6 +94,14 @@ h3 {
 		float: left;
 		text-align: center;
 		font-size: 3rem;
+	}
+
+	#navBars {
+		display: none;
+	}
+
+	#quickLinks {
+		display: block !important;
 	}
 
 	header nav li {
@@ -139,7 +151,6 @@ h3 {
 		background-color: white;
 		width: 75%;
 		margin: 20px auto;
-		padding: 0 10px;
 		border-radius: 10px;
 	}
 }
@@ -151,8 +162,12 @@ h3 {
 		text-align: center;
 	}
 
+	header nav ul {
+		display: none;
+	}
+
 	ul#account {
-		width: 70%;
+		width: 100%;
 		float: right;
 	}
 
@@ -162,7 +177,46 @@ h3 {
 		list-style-type: none;
 		box-sizing: border-box;
 		padding: 10px;
-		width: 50%;
+		width: calc(100% / 3);
 		background-color: rgb(150, 20, 20);
+	}
+
+	header nav li {
+		top: 20px;
+		width: 100%;
+		text-align: center;
+		list-style-type: none;
+		box-sizing: border-box;
+		padding: 10px;
+		background-color: rgb(150, 20, 20);
+	}
+
+	/*=== footer ===*/
+	footer {
+		background-color: rgb(150, 20, 20);
+	}
+	footer h3 {
+		text-align: center;
+		background-color: white;
+	}
+	footer div {
+		background-color: rgb(150, 20, 20);
+		padding: 10px;
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+	footer li {
+		text-align: center;
+		list-style-type: none;
+		box-sizing: border-box;
+		padding: 10px;
+	}
+
+	/*=== other elements ===*/
+	div {
+		background-color: white;
+		width: 100%;
+		border-radius: 10px;
 	}
 }
