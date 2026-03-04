@@ -10,6 +10,13 @@ input {
 	display: inline-block;
 }
 
+input[type=text] {
+	width: 80%;
+	border-radius: 10px;
+	font-size: 1.5rem;
+	margin: 10px 0;
+}
+
 form li {
 	list-style-type: none;
 	margin: 10px;

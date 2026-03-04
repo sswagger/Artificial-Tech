@@ -47,6 +47,10 @@ footer {
 	border-top: rgb(150, 20, 20) 20px solid;
 }
 
+footer img {
+	background-color: #ffffff;
+}
+
 /* ======================
  * Other Content Elements
  * ======================
@@ -83,7 +87,8 @@ p {
 }
 
 .main-content h2 {
-	padding: 0 20px;
+	text-align: center;
+	font-weight: bold;
 }
 
 /* =================
@@ -226,6 +231,12 @@ p {
 		list-style-type: none;
 		box-sizing: border-box;
 		padding: 10px;
+	}
+
+	footer img {
+		margin: 0 10%;
+		width: 80%;
+		height: auto;
 	}
 
 	/*=== other elements ===*/
