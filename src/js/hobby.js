@@ -5,20 +5,30 @@ const code = document.getElementById("userCode");
 let fileCount = 0;
 let fileIndex = 1;
 
+// New Tab
+function newTab() {
+	let tabString = "<a href=\"#\" id=\"" + ++fileCount + "\">File " + fileCount + "</a>";
+	const newFileTab = document.createElement('li');
+	newFileTab.innerHTML = tabString;
+	newFileTab.addEventListener('click', (e) => {
+		if (e.target.id !== "newFile") {
+			saveData(e.target.id);
+			retrieveData(e.target.id);
+		}
+	});
+	return newFileTab;
+}
+
+// create starter tabs
+for (let i = 1; i <= Number(localStorage.getItem("numFiles")); i++) {
+	fileNavigation.insertBefore(newTab(), fileNavigation.childNodes[fileCount]);
+	fileCount = i;
+}
+
 // Add new Files
 document.getElementById("newFile").addEventListener("click", () => {
 	if (fileCount <= 100) {
-		let tabString = "<a href=\"#\" id=\"" + ++fileCount + "\">File " + fileCount + "</a>";
-		const newFileTab = document.createElement('li');
-		newFileTab.innerHTML = tabString;
-		newFileTab.addEventListener('click', (e) => {
-			if (e.target.id !== "newFile") {
-				saveData(e.target.id);
-				retrieveData(e.target.id);
-			}
-		})
-
-		fileNavigation.insertBefore(newFileTab, fileNavigation.childNodes[fileCount]);
+		fileNavigation.insertBefore(newTab(), fileNavigation.childNodes[fileCount]);
 	}
 });
 
@@ -39,4 +49,9 @@ function retrieveData(liIndex) {
 document.getElementById("clear").addEventListener("click", function () {
 	localStorage.clear();
 	window.alert("Data cleared successfully!")
+});
+
+// save number of tabs
+window.addEventListener("beforeunload", function () {
+	localStorage.setItem("numFiles", fileCount)
 });

@@ -15,13 +15,21 @@
 	<body>
 		<header id="header"></header>
 
-		<div class="main-content">
+		<div class="main-content" id="notMobile">
+			<img src="img/head-artificial-tech.png" alt="" />
+			<h2>Open Circuits: Hobby Subscription!</h2>
+			<h3>Sorry This Feature Is Not Available On Mobile Devices</h3>
+
+			<img src="img/footer.png" alt="" class="bottom_img" />
+		</div>
+
+		<div class="main-content" id="editor">
 			<h2>Open Circuits: Hobby Subscription!</h2>
 
 			<ul id="fileNav">
 				<li><a href="#" id="newFile"><i class="fa-solid fa-plus"></i></a></li>
 			</ul>
-			<h2 id="currFile"></h2>
+			<h2 id="currFile">File 1</h2>
 			<div class="codeWindow" contenteditable="true" id="userCode">Create a new file, then start coding here!</div>
 
 			<button id="clear" type="button">Clear all data</button>

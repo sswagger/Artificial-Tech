@@ -41,3 +41,18 @@ button {
 	border-radius: 10px;
 	text-align: center;
 }
+
+#notMobile {
+	display: none;
+}
+
+/* for screens smaller than 950px */
+@media (max-width: 950px) {
+	#editor {
+		display: none;
+	}
+
+	#notMobile {
+		display: block;
+	}
+}

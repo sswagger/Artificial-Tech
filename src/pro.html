@@ -5,20 +5,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/basic.css" />
-		<link rel="stylesheet" href="css/article.css" />
+		<link rel="stylesheet" href="css/product.css" />
 		<script src="https://kit.fontawesome.com/6b52a09151.js" crossorigin="anonymous"></script>
 		<script src="js/basic.js" defer></script>
+		<script src="js/hobby.js" defer></script>
 		<title>Pro | Artificial Technologies</title>
 	</head>
 
 	<body>
 		<header id="header"></header>
 
-		<div class="main-content">
+		<div class="main-content" id="notMobile">
 			<img src="img/head-artificial-tech.png" alt="" />
-			<h2>Open Circuits Pro</h2>
+			<h2>Open Circuits: Hobby Subscription!</h2>
+			<h3>Sorry This Feature Is Not Available On Mobile Devices</h3>
 
 			<img src="img/footer.png" alt="" class="bottom_img" />
+		</div>
+
+		<div class="main-content" id="editor">
+			<h2>Open Circuits: Pro Subscription!</h2>
+
+			<ul id="fileNav">
+				<li><a href="#" id="newFile"><i class="fa-solid fa-plus"></i></a></li>
+			</ul>
+			<h2 id="currFile">File 1</h2>
+			<div class="codeWindow" contenteditable="true" id="userCode">Create a new file, then start coding here!</div>
+
+			<button id="clear" type="button">Clear all data</button>
 		</div>
 
 		<footer id="footer"></footer>
