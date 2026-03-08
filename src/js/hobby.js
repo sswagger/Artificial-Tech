@@ -7,30 +7,35 @@ let fileIndex = 1;
 
 // New Tab
 function newTab() {
-	let tabString = "<a href=\"#\" id=\"" + ++fileCount + "\">File " + fileCount + "</a>";
+	const newFileButton = document.createElement('a');
+	newFileButton.id = (++fileCount).toString();
+	newFileButton.innerText = "File " + fileCount;
 	const newFileTab = document.createElement('li');
-	newFileTab.innerHTML = tabString;
-	newFileTab.addEventListener('click', (e) => {
+	newFileTab.insertBefore(newFileButton, newFileTab.childNodes[-1]);
+	newFileButton.addEventListener('click', (e) => {
 		if (e.target.id !== "newFile") {
 			saveData(e.target.id);
 			retrieveData(e.target.id);
 		}
 	});
+	newFileButton.dispatchEvent(new MouseEvent('click'));
 	return newFileTab;
 }
 
 // create starter tabs
-for (let i = 1; i <= Number(localStorage.getItem("numFiles")); i++) {
-	fileNavigation.insertBefore(newTab(), fileNavigation.childNodes[fileCount]);
-	fileCount = i;
-}
-
-// Add new Files
-document.getElementById("newFile").addEventListener("click", () => {
-	if (fileCount <= 100) {
-		fileNavigation.insertBefore(newTab(), fileNavigation.childNodes[fileCount]);
+function loadTabs() {
+	console.log(localStorage.getItem("numFiles"));
+	if (localStorage.getItem("numFiles") !== undefined) {
+		for (let i = 1; i <= Number(localStorage.getItem("numFiles")); i++) {
+			fileNavigation.insertBefore(newTab(), fileNavigation.childNodes[fileCount]);
+			fileCount = i;
+		}
 	}
-});
+	else {
+		fileNavigation.insertBefore(newTab(), fileNavigation.childNodes[fileCount]);
+		fileCount = 1;
+	}
+}
 
 // save data from files when user switches files
 function saveData(liIndex) {
@@ -49,9 +54,29 @@ function retrieveData(liIndex) {
 document.getElementById("clear").addEventListener("click", function () {
 	localStorage.clear();
 	window.alert("Data cleared successfully!")
+	let numRemove = fileNavigation.childElementCount;
+	for (let i = numRemove - 2; i >= 0; i--) {
+		fileNavigation.removeChild(fileNavigation.children[i]);
+	}
+	fileCount = 0;
+	fileIndex = 1;
+	localStorage.setItem("numFiles", "1")
+	loadTabs();
 });
 
 // save number of tabs
 window.addEventListener("beforeunload", function () {
-	localStorage.setItem("numFiles", fileCount)
+	localStorage.setItem("numFiles", fileCount);
+});
+
+// Add new Files
+document.getElementById("newFile").addEventListener("click", () => {
+	if (fileCount <= 100) {
+		fileNavigation.insertBefore(newTab(), fileNavigation.childNodes[fileCount]);
+	}
+});
+
+// load tabs for the first time
+window.addEventListener("load", function () {
+	loadTabs();
 });
