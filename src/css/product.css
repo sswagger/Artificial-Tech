@@ -1,0 +1,43 @@
+.codeWindow {
+	font-family: "Courier New", monospace;
+	background-color: #00121f;
+	color: #00eeb4;
+	width: 80%;
+	height: 400px;
+	padding: 20px 10px;
+}
+
+h3 {
+	margin-top: 20px;
+}
+
+#fileNav {
+	width: 80%;
+	margin: 20px auto;
+}
+
+#fileNav:after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+#fileNav li {
+	list-style-type: none;
+	width: 10%;
+	background-color: rgb(150, 20, 20);
+	float: left;
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+button {
+	width: 80%;
+	font-size: 1.2rem;
+	margin: 0 10% 20px;
+	background-color: rgb(150, 20, 20);
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+}

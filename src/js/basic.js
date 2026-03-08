@@ -29,6 +29,17 @@ window.addEventListener("load", async function () {
 		menuOpen = !menuOpen
 		return false;
 	});
+
+	if (sessionStorage.getItem("loggedIn") === "true") {
+		let login = document.getElementById("login");
+		let signup = document.getElementById("signup");
+		login.innerText = "Log out";
+		signup.innerText = "New Account";
+
+		login.addEventListener("click", function() {
+			sessionStorage.setItem("loggedIn", "false")
+		});
+	}
 });
 
 // ==============

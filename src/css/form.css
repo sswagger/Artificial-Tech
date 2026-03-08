@@ -41,3 +41,7 @@ button:hover {
 	color: white;
 	text-decoration: underline;
 }
+
+#error {
+	display: none;
+}
