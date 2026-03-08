@@ -27,6 +27,16 @@ sup {
 	font-size: 0.4rem;
 }
 
+#num-accounts {
+	font-weight: bold;
+	font-size: 5rem;
+}
+
+#num-accounts-parent {
+	text-align: center;
+	margin: auto;
+}
+
 @media (min-width: 950px) {
 	.blue-div {
 		float: left;

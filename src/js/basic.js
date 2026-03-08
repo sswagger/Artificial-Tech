@@ -6,7 +6,7 @@
 async function getResources(path) {
 	return fetch(path).then((res) => res.text()).then((text) => {
 		return text;
-	})
+	});
 }
 
 // ==============

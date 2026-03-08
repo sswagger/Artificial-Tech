@@ -1,0 +1,8 @@
+{
+  "username1":   ["pass1", "blog"],
+  "me":          ["pass2", "pro"],
+  "account3":    ["pass3", "hobby"],
+  "myCompany":   ["pass4", "pro"],
+  "userX":       ["pass5", "btf"],
+  "anotherUser": ["pass6", "blog"]
+}
