@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/basic.css" />
 		<link rel="stylesheet" href="css/product.css" />
+		<link rel="stylesheet" href="css/form.css" />
 		<script src="https://kit.fontawesome.com/6b52a09151.js" crossorigin="anonymous"></script>
 		<script src="js/basic.js" defer></script>
 		<title>Blog | Artificial Technologies</title>
@@ -16,7 +17,75 @@
 
 		<div class="main-content">
 			<h2>Open Circuits: Blog Subscription!</h2>
+			<h3>Header</h3>
+			<ul class="template">
+				<li><a href="#">Template 1</a></li>
+				<li><a href="#">Template 2</a></li>
+				<li><a href="#">Template 3</a></li>
+			</ul>
+			<form id="headerForm1">
+				<div>
+					<h3>Title</h3>
+					<section>
+						<label for="title">Title: </label>
+						<input type="text" id="title" maxlength="30" required />
+					</section>
+					<section>
+						<label for="subtitle">Subtitle: </label>
+						<input type="text" id="subtitle" maxlength="30" />
+					</section>
+					<section>
+						<label for="description">Description: </label>
+						<input type="text" id="description" maxlength="30" />
+					</section>
+				</div>
+				<div>
+					<h3>Hot Links</h3>
+					<section>
+						<label for="firstLink">First Link: </label>
+						<input type="text" id="firstLink" required />
+					</section>
+					<section>
+						<label for="secondLink">Second Link: </label>
+						<input type="text" id="secondLink" required />
+					</section>
+					<section>
+						<label for="thirdLink">Third Link: </label>
+						<input type="text" id="thirdLink" required />
+					</section>
+				</div>
+				<div>
+					<h3>Color</h3>
+					<section>
+						<label for="color">Text Color: </label>
+						<input type="color" id="color" required />
+					</section>
+					<section>
+						<label for="backColor">Background Color: </label>
+						<input type="color" id="backColor" required />
+					</section>
+					<section>
+						<label for="linkColor">Hot Link Color: </label>
+						<input type="color" id="linkColor" required />
+					</section>
+				</div>
+			</form>
+			<div class="codeWindow" contenteditable="true">&lt;header&gt;Your HTML&lt;/header&gt;</div>
 
+			<h3>Body</h3>
+			<ul class="template">
+				<li><a href="#">Template 1</a></li>
+				<li><a href="#">Template 2</a></li>
+				<li><a href="#">Template 3</a></li>
+			</ul>
+
+
+			<h3>Footer</h3>
+			<ul class="template">
+				<li><a href="#">Template 1</a></li>
+				<li><a href="#">Template 2</a></li>
+				<li><a href="#">Template 3</a></li>
+			</ul>
 		</div>
 
 		<footer id="footer"></footer>

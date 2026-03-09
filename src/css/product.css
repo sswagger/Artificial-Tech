@@ -5,10 +5,7 @@
 	width: 80%;
 	height: 400px;
 	padding: 20px 10px;
-}
-
-h3 {
-	margin-top: 20px;
+	overflow-wrap: break-word;
 }
 
 #fileNav {
@@ -44,6 +41,27 @@ button {
 
 #notMobile {
 	display: none;
+}
+
+.template {
+	width: 80%;
+	margin: 20px auto;
+}
+
+.template:after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+.template li {
+	list-style-type: none;
+	width: 15%;
+	background-color: rgb(150, 20, 20);
+	float: left;
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
 }
 
 /* for screens smaller than 950px */
