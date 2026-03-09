@@ -1,1 +1,5 @@
-const header = document.getElementById("")
+let webPage = "";
+
+document.getElementById("view").addEventListener("click", function () {
+
+});

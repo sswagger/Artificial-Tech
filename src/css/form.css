@@ -45,3 +45,12 @@ button:hover {
 #error {
 	display: none;
 }
+
+@media (max-width: 950px) {
+	input[type=text] {
+		width: 100%;
+		border-radius: 10px;
+		font-size: 1.5rem;
+		margin: 0 0 10px 0;
+	}
+}

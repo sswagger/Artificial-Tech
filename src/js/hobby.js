@@ -17,6 +17,7 @@ function newTab() {
 			saveData(e.target.id);
 			retrieveData(e.target.id);
 		}
+		return false;
 	});
 	newFileButton.dispatchEvent(new MouseEvent('click'));
 	return newFileTab;
