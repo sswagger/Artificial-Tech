@@ -6,19 +6,21 @@ let currSection = 0;
 let bodyContent = document.getElementById("webBody");
 let numButtons = 0;
 let numTexts = 0;
+let numHotLinks = 0;
 
 // =========
 // Functions
 // =========
-
 // create li's for navigation
 function buildNavList(hotLinkIds) {
+	numHotLinks = 0;
 	let list = "";
 
 	// loop through hotLinkIds and add li if id has text
 	for (let i in hotLinkIds) {
 		if (document.getElementById(i).value) {
-			list += "<li><a href='"+document.getElementById(i).value+"'>"+document.getElementById(hotLinkIds[i]).value+"</a></li>"
+			list += "<li><a href='#sect"+document.getElementById(i).value+"'>"+document.getElementById(hotLinkIds[i]).value+"</a></li>"
+			numHotLinks += 1;
 		}
 	}
 	return list;
@@ -53,8 +55,7 @@ function saveSection() {
 function newSect() {
 	numSections += 1;
 
-	// create new section navigation
-	let newSectNav = document.createElement("li");
+	// create new button for section navigation
 	let newSectBtn = document.createElement("input");
 	newSectBtn.type = "radio";
 	newSectBtn.id = numSections;
@@ -65,41 +66,41 @@ function newSect() {
 	let newSectLabel = document.createElement("label");
 	newSectLabel.innerText = " Section " + numSections;
 
+	// create new li for section navigation
+	let newSectNav = document.createElement("li");
 	newSectNav.id = "sectNav" + numSections;
 	newSectLabel.prepend(newSectBtn);
 	newSectNav.appendChild(newSectLabel);
 	document.getElementById("sectionSelector").appendChild(newSectNav);
 
+	// go to new section
 	newSectBtn.dispatchEvent(new MouseEvent("click"));
-
-	return newSectNav;
 }
 
 // ==============
 // Event Handlers
 // ==============
-
 // Add new section
 document.getElementById("newSection").addEventListener("click", function () {
 	newSect();
-
-	return false;
 });
 
 // Add new button
 document.getElementById("newBtn").addEventListener("click", function () {
+	// create button element
 	let newBtn = document.createElement("button");
 	newBtn.innerText = "Button " + ++numButtons;
 	newBtn.addEventListener("click", (e) => {
 		e.preventDefault();
 	});
 
+	// add button element to html
 	document.getElementById("sect" + currSection).appendChild(newBtn);
-	return false;
 });
 
 // Add new text section
 document.getElementById("newText").addEventListener("click", function () {
+	// create new div element
 	let newText = document.createElement("div");
 	newText.innerHTML =
 		"<h1>Text Box " + ++numTexts + "</h1>" +
@@ -112,12 +113,13 @@ document.getElementById("newText").addEventListener("click", function () {
 		"Ante accumsan potenti etiam curae suspendisse pharetra sollicitudin scelerisque aptent lectus. " +
 		"Auctor est neque metus fames lacinia aliquam euismod lacinia.</p>";
 
+	// add div to html
 	document.getElementById("sect" + currSection).appendChild(newText);
-	return false;
 });
 
 // Delete current section
 document.getElementById("delete").addEventListener("click", function () {
+	// if there is only one section left, just clear it
 	if (numSections > 1) {
 		// clear storage item
 		localStorage.removeItem("sect"+numSections)
@@ -130,6 +132,7 @@ document.getElementById("delete").addEventListener("click", function () {
 		changeSect(numSections, true);
 	}
 	else {
+		// clear section
 		bodyContent.innerHTML = "<section id='sect"+numSections+"'></section>"
 		changeSect(numSections);
 	}
@@ -145,18 +148,68 @@ window.addEventListener("load", function () {
 
 // build HTML page
 document.getElementById("view").addEventListener("click", function () {
+	saveSection();
+
 	let title = document.getElementById("title");
 	let subtitle = document.getElementById("subtitle");
 	let description = document.getElementById("desc");
 	let header =
 		"<header>" +
+		"<div>" +
 		"<h1>"+title.value+"</h1>" +
 		"<h3>"+subtitle.value+"</h3>" +
+		"</div>" +
 		"<p>"+description.value+"</p>" +
 		"<nav><ul>" +
 		buildNavList({"link1":"link1btn", "link2":"link2btn", "link3":"link3btn"}) +
 		"</ul></nav>" +
 		"</header>";
+
+	// User's Header color styles
+	let textColor = document.getElementById("txtColor").value;
+	let backgroundColor = document.getElementById("backColor").value;
+	let primaryColor = document.getElementById("primaryColor").value;
+	let secondaryColor = document.getElementById("secondaryColor").value;
+	let buttonColor = document.getElementById("btnColor").value;
+	let styles = "<style>* {font-family: sans-serif; margin: 0; padding: 0; list-style-type: none; box-sizing: border-box;}</style>";
+
+	if (document.getElementById("temp1").checked) {
+		// Add header styles
+		styles +=
+			"<style>" +
+			"* {text-align: center;}" +
+			"h1 {color: " + textColor + "; width: 100%;}" +
+			"h3 {color: " + secondaryColor + "; width: 100%;}" +
+			"p {color: " + secondaryColor + "; margin: 20px 0;}" +
+			"header {background-color: " + backgroundColor + ";}" +
+			"li {background-color: " + buttonColor + "; padding: 15px}" +
+			"a {color: " + textColor + "; text-decoration: none; font-weight: bolder; display: inline-block;}" +
+			"</style>";
+	}
+	else if (document.getElementById("temp2").checked) {
+		styles +=
+			"<style>" +
+			"header div {float: left; width: 70%; padding: 20px;}" +
+			"header {background-color: " + backgroundColor + ";}" +
+			"header:after {content: ''; clear: both; display: table;}" +
+			"header h1 {color: " + textColor + "; width: 100%; padding: 10px 0 0 20%;}" +
+			"h3 {color: " + secondaryColor + "; width: 100%; padding: 0 0 10px 20%;}" +
+			"header p {color: " + textColor + "; width: 30%; float: right; padding: 40px;}" +
+			"nav {clear: both}" +
+			"li {background-color: " + buttonColor + "; padding: 15px; width: "+(100 / numHotLinks)+"%; float: left; text-align: center;}" +
+			"a {color: " + textColor + "; text-decoration: none; font-weight: bolder; display: inline-block;}" +
+			"</style>"
+	}
+	// Add body styles
+	styles +=
+		"<style>" +
+		"section {width: 80%; margin: 10px auto; background-color: "+backgroundColor+";}" +
+		"div {padding: 3% 10%;}" +
+		"section h1 {color: "+primaryColor+";}" +
+		"section p {color: "+textColor+";}" +
+		"section button {width: 70%; padding: 10px; background-color: "+buttonColor+"; border: none; margin: 20px 15%;}" +
+		"section button:active {background-color: #808080}" +
+		"</style>";
 
 	let body = "";
 	for (let i = 1; i <= numSections; i++) {
@@ -181,6 +234,7 @@ document.getElementById("view").addEventListener("click", function () {
 		"<html lang='en-us'><head>" +
 		"<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1'>" +
 		"<title>Document</title>" +
+		styles +
 		"</head><body>" +
 		header + body + footer +
 		"</body></html>";
@@ -189,6 +243,7 @@ document.getElementById("view").addEventListener("click", function () {
 	window.open(url, '_blank');
 });
 
+// clear sections
 document.getElementById("clear").addEventListener("click", function () {
 	localStorage.clear();
 	let sectionSelector = document.getElementById("sectionSelector");
