@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/form.css" />
 		<script src="https://kit.fontawesome.com/6b52a09151.js" crossorigin="anonymous"></script>
 		<script src="js/basic.js" defer></script>
+		<script src="js/blog.js" defer></script>
 		<title>Blog | Artificial Technologies</title>
 	</head>
 
@@ -62,36 +63,44 @@
 					</section>
 				</div>
 				<div>
-					<h3>Hot Links (Id of element)</h3>
+					<h3>Hot Links (Id of section)</h3>
 					<section>
 						<label for="link1">Link 1: </label>
 						<input type="text" id="link1" maxlength="30" placeholder="ex: #1" />
+					</section>
+					<section>
+						<label for="link1btn">Link 1 Text: </label>
+						<input type="text" id="link1btn" maxlength="30" placeholder="ex: First Link!" />
 					</section>
 					<section>
 						<label for="link2">Link 2: </label>
 						<input type="text" id="link2" maxlength="30" />
 					</section>
 					<section>
+						<label for="link2btn">Link 2 Text: </label>
+						<input type="text" id="link2btn" maxlength="30" />
+					</section>
+					<section>
 						<label for="link3">Link 3: </label>
 						<input type="text" id="link3" maxlength="30" />
+					</section>
+					<section>
+						<label for="link3btn">Link 3 Text: </label>
+						<input type="text" id="link3btn" maxlength="30" />
 					</section>
 				</div>
 			</form>
 
 			<h3>Body</h3>
 			<form>
-				<ul class="template">
-					<li><input type="radio" id="section1" name="templateBody" checked /><label for="section1"> Section 1</label></li>
-				</ul>
+				<ul class="template" id="sectionSelector"></ul>
 				<ul class="template">
 					<li><a href="#" id="newSection" onclick="return false;"><i class="fa-solid fa-plus"></i> New Section</a></li>
 					<li><a href="#" id="newBtn" onclick="return false;"><i class="fa-solid fa-plus"></i> New Button</a></li>
 					<li><a href="#" id="newText" onclick="return false;"><i class="fa-solid fa-plus"></i> New Text</a></li>
-					<li><a href="#" id="delete" onclick="return false;"><i class="fa-solid fa-x"></i> Delete</a></li>
+					<li><a href="#" id="delete" onclick="return false;"><i class="fa-solid fa-x"></i> Delete Section</a></li>
 				</ul>
-				<div id="webBody">
-					<section></section>
-				</div>
+				<div id="webBody"></div>
 			</form>
 
 			<h3>Footer</h3>
@@ -122,22 +131,34 @@
 						<input type="text" id="link1Footer" maxlength="30" placeholder="ex: #1" />
 					</section>
 					<section>
+						<label for="link1btnFooter">Link 1 Text: </label>
+						<input type="text" id="link1btnFooter" maxlength="30" placeholder="ex: First Link!" />
+					</section>
+					<section>
 						<label for="link2Footer">Link 2: </label>
 						<input type="text" id="link2Footer" maxlength="30" />
 					</section>
 					<section>
+						<label for="link2btnFooter">Link 2 Text: </label>
+						<input type="text" id="link2btnFooter" maxlength="30" />
+					</section>
+					<section>
 						<label for="link3Footer">Link 3: </label>
 						<input type="text" id="link3Footer" maxlength="30" />
+					</section>
+					<section>
+						<label for="link3btnFooter">Link 3 Text: </label>
+						<input type="text" id="link3btnFooter" maxlength="30" />
 					</section>
 				</div>
 				<div>
 					<h3>Logo</h3>
 					<section>
 						<label for="iconFooter">Logo Image: </label>
-						<input type="text" id="iconFooter" maxlength="30" placeholder="ex: %USERPROFILE%/Pictures/myimg.jpg" />
+						<input type="text" id="iconFooter" maxlength="50" placeholder="ex: %USERPROFILE%/Pictures/myimg.jpg" />
 					</section>
 					<section>
-						<label for="logoFooter">Logo Title: </label>
+						<label for="logoFooter">Company: </label>
 						<input type="text" id="logoFooter" maxlength="30" />
 					</section>
 					<section>
@@ -146,8 +167,10 @@
 					</section>
 				</div>
 			</form>
+			<div class="codeWindow" contenteditable="true" id="userCode"></div>
 
 			<button id="view">View Webpage</button>
+			<button id="clear" type="button">Clear all data</button>
 		</div>
 
 		<footer id="footer"></footer>
