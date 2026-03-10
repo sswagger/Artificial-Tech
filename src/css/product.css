@@ -6,6 +6,7 @@
 	height: 400px;
 	padding: 20px 10px;
 	overflow-wrap: break-word;
+	overflow: scroll;
 }
 
 #fileNav {

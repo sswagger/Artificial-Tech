@@ -100,7 +100,7 @@ document.getElementById("newBtn").addEventListener("click", function () {
 
 // Add new text section
 document.getElementById("newText").addEventListener("click", function () {
-	let newText = document.createElement("button");
+	let newText = document.createElement("div");
 	newText.innerHTML =
 		"<h1>Text Box " + ++numTexts + "</h1>" +
 		"<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
@@ -158,7 +158,10 @@ document.getElementById("view").addEventListener("click", function () {
 		"</ul></nav>" +
 		"</header>";
 
-
+	let body = "";
+	for (let i = 1; i <= numSections; i++) {
+		body += localStorage.getItem("sect" + i)
+	}
 
 	let image = document.getElementById("iconFooter");
 	let companyName = document.getElementById("logoFooter");
@@ -172,5 +175,30 @@ document.getElementById("view").addEventListener("click", function () {
 		"<h2>"+companyName.value+"</h2>" +
 		"<p>"+rights.value+"</p>" +
 		"</footer>"
-	document.getElementById("userCode").innerText = header + footer;
+	document.getElementById("userCode").innerText = header + body + footer;
+
+	let userWebsite =
+		"<html lang='en-us'><head>" +
+		"<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1'>" +
+		"<title>Document</title>" +
+		"</head><body>" +
+		header + body + footer +
+		"</body></html>";
+	const blob = new Blob([userWebsite], { type: 'text/html'});
+	const url = URL.createObjectURL(blob);
+	window.open(url, '_blank');
+});
+
+document.getElementById("clear").addEventListener("click", function () {
+	localStorage.clear();
+	let sectionSelector = document.getElementById("sectionSelector");
+	window.alert("Data cleared successfully!")
+	for (let i = numSections - 1; i > 0; i--) {
+		sectionSelector.removeChild(sectionSelector.children[i]);
+	}
+	numSections = 1;
+	currSection = 1;
+	localStorage.setItem("numSect", "1")
+	document.getElementById("userCode").innerText = "";
+	changeSect(currSection, true);
 });
