@@ -148,8 +148,19 @@ window.addEventListener("load", function () {
 
 // build HTML page
 document.getElementById("view").addEventListener("click", function () {
+	// save any changes
 	saveSection();
 
+	// User's header color styles
+	let textColor = document.getElementById("txtColor").value;
+	let backgroundColor = document.getElementById("backColor").value;
+	let primaryColor = document.getElementById("primaryColor").value;
+	let secondaryColor = document.getElementById("secondaryColor").value;
+	let buttonColor = document.getElementById("btnColor").value;
+	// basic stylesheet
+	let styles = "<style>* {font-family: sans-serif; margin: 0; padding: 0; list-style-type: none; box-sizing: border-box; width: 100%}</style>";
+
+	// build the header
 	let title = document.getElementById("title");
 	let subtitle = document.getElementById("subtitle");
 	let description = document.getElementById("desc");
@@ -165,21 +176,14 @@ document.getElementById("view").addEventListener("click", function () {
 		"</ul></nav>" +
 		"</header>";
 
-	// User's Header color styles
-	let textColor = document.getElementById("txtColor").value;
-	let backgroundColor = document.getElementById("backColor").value;
-	let primaryColor = document.getElementById("primaryColor").value;
-	let secondaryColor = document.getElementById("secondaryColor").value;
-	let buttonColor = document.getElementById("btnColor").value;
-	let styles = "<style>* {font-family: sans-serif; margin: 0; padding: 0; list-style-type: none; box-sizing: border-box;}</style>";
-
+	// add header styles based on templates
 	if (document.getElementById("temp1").checked) {
 		// Add header styles
 		styles +=
 			"<style>" +
-			"* {text-align: center;}" +
-			"h1 {color: " + textColor + "; width: 100%;}" +
-			"h3 {color: " + secondaryColor + "; width: 100%;}" +
+			"* {text-align: center; border-radius: 20px}" +
+			"h1 {color: " + textColor + ";}" +
+			"h3 {color: " + secondaryColor + ";}" +
 			"p {color: " + secondaryColor + "; margin: 20px 0;}" +
 			"header {background-color: " + backgroundColor + ";}" +
 			"li {background-color: " + buttonColor + "; padding: 15px}" +
@@ -192,30 +196,33 @@ document.getElementById("view").addEventListener("click", function () {
 			"header div {float: left; width: 70%; padding: 20px;}" +
 			"header {background-color: " + backgroundColor + ";}" +
 			"header:after {content: ''; clear: both; display: table;}" +
-			"header h1 {color: " + textColor + "; width: 100%; padding: 10px 0 0 20%;}" +
-			"h3 {color: " + secondaryColor + "; width: 100%; padding: 0 0 10px 20%;}" +
+			"header h1 {color: " + textColor + "; padding: 10px 0 0 20%;}" +
+			"h3 {color: " + secondaryColor + "; padding: 0 0 10px 20%;}" +
 			"header p {color: " + textColor + "; width: 30%; float: right; padding: 40px;}" +
 			"nav {clear: both}" +
-			"li {background-color: " + buttonColor + "; padding: 15px; width: "+(100 / numHotLinks)+"%; float: left; text-align: center;}" +
+			"header li {background-color: " + buttonColor + "; padding: 15px; width: "+(100 / numHotLinks)+"%; float: left; text-align: center;}" +
 			"a {color: " + textColor + "; text-decoration: none; font-weight: bolder; display: inline-block;}" +
 			"</style>"
+	}
+
+	// build the body
+	let body = "";
+	// loop through the sections and add them
+	for (let i = 1; i <= numSections; i++) {
+		body += localStorage.getItem("sect" + i)
 	}
 	// Add body styles
 	styles +=
 		"<style>" +
-		"section {width: 80%; margin: 10px auto; background-color: "+backgroundColor+";}" +
+		"section {width: 80%; margin: 10px auto; background-color: " + backgroundColor + ";}" +
 		"div {padding: 3% 10%;}" +
-		"section h1 {color: "+primaryColor+";}" +
-		"section p {color: "+textColor+";}" +
-		"section button {width: 70%; padding: 10px; background-color: "+buttonColor+"; border: none; margin: 20px 15%;}" +
+		"section h1 {color: " + primaryColor + ";}" +
+		"section p {color: " + textColor + ";}" +
+		"section button {width: 70%; padding: 10px; background-color: " + buttonColor + "; border: none; margin: 20px 15%;}" +
 		"section button:active {background-color: #808080}" +
 		"</style>";
 
-	let body = "";
-	for (let i = 1; i <= numSections; i++) {
-		body += localStorage.getItem("sect" + i)
-	}
-
+	// build the footer
 	let image = document.getElementById("iconFooter");
 	let companyName = document.getElementById("logoFooter");
 	let rights = document.getElementById("rightsFooter");
@@ -228,8 +235,32 @@ document.getElementById("view").addEventListener("click", function () {
 		"<h2>"+companyName.value+"</h2>" +
 		"<p>"+rights.value+"</p>" +
 		"</footer>"
-	document.getElementById("userCode").innerText = header + body + footer;
+	// add footer styles based on templates
+	if (document.getElementById("temp1Footer").checked) {
+		styles +=
+			"<style>" +
+			"footer li {background-color: " + buttonColor + "; padding: 15px; width: "+(100 / numHotLinks)+"%; float: left; text-align: center;}" +
+			"footer {padding: 20px; background-color: " + backgroundColor + ";}" +
+			"footer h2 {color: " + textColor + "; text-align: center; padding: 20px}" +
+			"footer p {color: " + secondaryColor + "; text-align: center; padding: 0 0 20px 0}" +
+			"</style>";
+	}
+	else if (document.getElementById("temp2Footer").checked) {
+		styles +=
+			"<style>" +
+			"footer li {background-color: " + buttonColor + "; padding: 15px}" +
+			"footer {padding: 20px; background-color: " + backgroundColor + ";}" +
+			"footer:after {content: ''; clear: both; display: table;}" +
+			"footer h2 {float: left; width: 70%; text-align: center;}" +
+			"footer p {float: left; width: 70%; margin: 0 0 20px 0; text-align: center;}" +
+			"footer nav {float: left; width: 30%;}" +
+			"footer img {display: none}" +
+			"</style>";
+	}
 
+	// show the user the HTML
+	document.getElementById("userCode").innerText = header + body + footer;
+	// build the rest of the website
 	let userWebsite =
 		"<html lang='en-us'><head>" +
 		"<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1'>" +
@@ -238,6 +269,8 @@ document.getElementById("view").addEventListener("click", function () {
 		"</head><body>" +
 		header + body + footer +
 		"</body></html>";
+
+	// open website in new window
 	const blob = new Blob([userWebsite], { type: 'text/html'});
 	const url = URL.createObjectURL(blob);
 	window.open(url, '_blank');
@@ -245,15 +278,21 @@ document.getElementById("view").addEventListener("click", function () {
 
 // clear sections
 document.getElementById("clear").addEventListener("click", function () {
+	// clear storage
 	localStorage.clear();
+	// clear section navigation
 	let sectionSelector = document.getElementById("sectionSelector");
 	window.alert("Data cleared successfully!")
 	for (let i = numSections - 1; i > 0; i--) {
 		sectionSelector.removeChild(sectionSelector.children[i]);
 	}
+
+	// reset variables
 	numSections = 1;
 	currSection = 1;
 	localStorage.setItem("numSect", "1")
 	document.getElementById("userCode").innerText = "";
+
+	// change to the remaining section
 	changeSect(currSection, true);
 });
