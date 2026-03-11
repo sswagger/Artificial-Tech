@@ -7,11 +7,12 @@ This website was created for a class at [MSCS](https://www.southeastmn.edu/Index
 # Future Plans for this project
 
 * Ensure that the user is logged in before allowing them to use blog.html, hobby.html, and pro.html.
+* Add a favicon
 * Add a way for users to upload images to a blog subscription.
 * Allow users to create accounts (instead of just redirecting to 404.html).
 * Add more templates to Blog Subscription
 * Add a mock database interface to Pro Subscription
 * Use another server to handle user accounts.
-* Post on a real domain (instead of using Azure Static Web Apps).
+* Post on a real domain (instead of using Azure Static Web Apps).f
 
 # Project Story:
