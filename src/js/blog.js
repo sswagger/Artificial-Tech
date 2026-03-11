@@ -1,16 +1,21 @@
 // =========
 // Variables
 // =========
+
+// DOM Elements
+let bodyContent = document.getElementById("webBody");
+// Variables
 let numSections = 0;
 let currSection = 0;
-let bodyContent = document.getElementById("webBody");
 let numButtons = 0;
 let numTexts = 0;
 let numHotLinks = 0;
 
+
 // =========
 // Functions
 // =========
+
 // create li's for navigation
 function buildNavList(hotLinkIds) {
 	numHotLinks = 0;
@@ -27,11 +32,7 @@ function buildNavList(hotLinkIds) {
 }
 
 // Change Current Section
-function changeSect(newSection, delSection) {
-	// save currently selected section
-	if (!delSection) {
-		saveSection();
-	}
+function changeSect(newSection) {
 
 	// if this is not a new section get HTML from storage
 	if (localStorage.getItem("sect" + newSection)) {
@@ -61,6 +62,7 @@ function newSect() {
 	newSectBtn.id = numSections;
 	newSectBtn.name = "sections";
 	newSectBtn.addEventListener("change", (e) => {
+		saveSection();
 		changeSect(e.target.id);
 	});
 	let newSectLabel = document.createElement("label");
@@ -74,12 +76,14 @@ function newSect() {
 	document.getElementById("sectionSelector").appendChild(newSectNav);
 
 	// go to new section
-	newSectBtn.dispatchEvent(new MouseEvent("click"));
+	changeSect(numSections);
 }
+
 
 // ==============
 // Event Handlers
 // ==============
+
 // Add new section
 document.getElementById("newSection").addEventListener("click", function () {
 	newSect();
@@ -129,7 +133,7 @@ document.getElementById("delete").addEventListener("click", function () {
 
 		// change to new section
 		numSections -= 1;
-		changeSect(numSections, true);
+		changeSect(numSections);
 	}
 	else {
 		// clear section
@@ -140,10 +144,18 @@ document.getElementById("delete").addEventListener("click", function () {
 	return false;
 });
 
-// Create Initial Section
+// Create Initial Sections
 window.addEventListener("load", function () {
-	currSection = 1;
-	newSect();
+	for (let i = 0; i < localStorage.getItem("numSect"); i++) {
+		currSection += 1;
+		newSect();
+	}
+});
+
+// Save number of sections
+window.addEventListener("beforeunload", function () {
+	saveSection();
+	localStorage.setItem("numSect", document.getElementById("sectionSelector").childElementCount.toString());
 });
 
 // build HTML page
@@ -254,7 +266,6 @@ document.getElementById("view").addEventListener("click", function () {
 			"footer h2 {float: left; width: 70%; text-align: center;}" +
 			"footer p {float: left; width: 70%; margin: 0 0 20px 0; text-align: center;}" +
 			"footer nav {float: left; width: 30%;}" +
-			"footer img {display: none}" +
 			"</style>";
 	}
 
@@ -294,5 +305,5 @@ document.getElementById("clear").addEventListener("click", function () {
 	document.getElementById("userCode").innerText = "";
 
 	// change to the remaining section
-	changeSect(currSection, true);
+	changeSect(currSection);
 });

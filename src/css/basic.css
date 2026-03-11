@@ -176,7 +176,7 @@ p {
 		border-radius: 10px;
 	}
 }
-/* mobile/tablet: everything smaller than 950px wide*/
+/* mobile/tablet: everything smaller than 950px wide */
 @media (max-width: 950px) {
 	/*=== header ===*/
 	h1 {

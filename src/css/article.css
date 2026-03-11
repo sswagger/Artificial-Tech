@@ -1,3 +1,8 @@
+/* ==============================
+ * Basic Styles For Article Pages
+ * ==============================
+ */
+
 .wide-div {
 	width: 80%;
 	background-color: rgb(75, 100, 155);
@@ -37,6 +42,11 @@ sup {
 	margin: auto;
 }
 
+/* =================
+ * Responsive Design
+ * =================
+ */
+/* desktop: everything wider than 950px */
 @media (min-width: 950px) {
 	.blue-div {
 		float: left;
@@ -45,6 +55,8 @@ sup {
 		margin-right: 5%;
 	}
 }
+
+/* mobile/tablet: everything smaller than 950px wide */
 @media (max-width: 950px) {
 	.blue-div {
 		width: 90%;

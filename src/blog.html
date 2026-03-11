@@ -16,8 +16,19 @@
 	<body>
 		<header id="header"></header>
 
-		<div class="main-content">
+		<!-- disable feature for mobile devices -->
+		<div class="main-content" id="notMobile">
+			<img src="img/head-artificial-tech.png" alt="" />
 			<h2>Open Circuits: Blog Subscription!</h2>
+			<h3>Sorry This Feature Is Not Available On Mobile Devices</h3>
+
+			<img src="img/footer.png" alt="" class="bottom_img" />
+		</div>
+
+		<!-- form with templates for a blog website -->
+		<div class="main-content" id="editor">
+			<h2>Open Circuits: Blog Subscription!</h2>
+			<!-- header form -->
 			<h3>Header</h3>
 			<form>
 				<ul class="template">
@@ -91,6 +102,7 @@
 				</div>
 			</form>
 
+			<!-- body form -->
 			<h3>Body</h3>
 			<form>
 				<ul class="template" id="sectionSelector"></ul>
@@ -103,6 +115,7 @@
 				<div id="webBody"></div>
 			</form>
 
+			<!-- footer form -->
 			<h3>Footer</h3>
 			<form>
 				<ul class="template">
@@ -139,10 +152,6 @@
 				<div>
 					<h3>Logo</h3>
 					<section>
-						<label for="iconFooter">Logo Image: </label>
-						<input type="text" id="iconFooter" maxlength="50" placeholder="ex: %USERPROFILE%/Pictures/myimg.jpg" />
-					</section>
-					<section>
 						<label for="logoFooter">Company: </label>
 						<input type="text" id="logoFooter" maxlength="30" />
 					</section>
@@ -153,6 +162,7 @@
 				</div>
 			</form>
 
+			<!-- show user the webpage -->
 			<div class="codeWindow" id="userCode"></div>
 			<button id="view">View Webpage</button>
 			<button id="clear" type="button">Clear all data</button>

@@ -1,11 +1,12 @@
-// ==============
-// Validate Login
-// ==============
+// =========
+// Variables
+// =========
 
-// set DOM Elements
+// DOM Elements
 const username= document.getElementById("username");
 const password= document.getElementById("pass");
 const warning = document.getElementById("error");
+// Variables
 let json;
 fetch("res/accounts.json").then((res) => {
 	res.json().then((j) => {
@@ -13,14 +14,24 @@ fetch("res/accounts.json").then((res) => {
 	});
 });
 
+
+// =========
+// Functions
+// =========
+
 // notify user when the login fails
 function submitFail(reason) {
 	warning.innerHTML = "<h2>" + reason +"</h2>";
 	warning.style.display = "block";
 }
 
+
+// ==============
+// Event Handlers
+// ==============
+
 // submit form and redirect
-document.getElementById("btnSubmit").addEventListener("click", (e) => {
+document.getElementById("btnSubmit").addEventListener("click", () => {
 	try {
 		// see if username and password are valid
 		if (json[username.value][0] === password.value) {

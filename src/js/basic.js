@@ -9,6 +9,7 @@ async function getResources(path) {
 	});
 }
 
+
 // ==============
 // Header Scripts
 // ==============
@@ -41,6 +42,7 @@ window.addEventListener("load", async function () {
 		});
 	}
 });
+
 
 // ==============
 // Footer Scripts
