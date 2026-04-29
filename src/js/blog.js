@@ -117,7 +117,7 @@ document.getElementById("newText").addEventListener("click", function () {
 		"Ante accumsan potenti etiam curae suspendisse pharetra sollicitudin scelerisque aptent lectus. " +
 		"Auctor est neque metus fames lacinia aliquam euismod lacinia.</p>";
 
-	// add div to html
+	// add div to HTML
 	document.getElementById("sect" + currSection).appendChild(newText);
 });
 
@@ -235,7 +235,6 @@ document.getElementById("view").addEventListener("click", function () {
 		"</style>";
 
 	// build the footer
-	let image = document.getElementById("iconFooter");
 	let companyName = document.getElementById("logoFooter");
 	let rights = document.getElementById("rightsFooter");
 	let footer =
@@ -243,7 +242,6 @@ document.getElementById("view").addEventListener("click", function () {
 		"<nav><ul>" +
 		buildNavList({"link1Footer":"link1btnFooter", "link2Footer":"link2btnFooter", "link3Footer":"link3btnFooter"}) +
 		"</ul></nav>" +
-		"<img  alt='' src='"+image.value+"' />" +
 		"<h2>"+companyName.value+"</h2>" +
 		"<p>"+rights.value+"</p>" +
 		"</footer>"
