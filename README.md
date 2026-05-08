@@ -5,7 +5,6 @@ This website was created for a class at [MSCS](https://www.southeastmn.edu/Index
 
 
 # Future Plans for this project
-
 * Ensure that the user is logged in before allowing them to use blog.html, hobby.html, and pro.html.
 * Add a favicon.
 * Include charts using ChartJS.
